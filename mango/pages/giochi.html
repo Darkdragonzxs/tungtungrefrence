@@ -16,7 +16,6 @@
             color: #ffffff;
             font-size: 50px;
             text-align: center;
-            padding: 0px;
             margin-top: -50px;
         }
         h1 {
@@ -29,10 +28,6 @@
             width: 100%;
             height: 100px;
             background-color: #000000;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,9 +38,8 @@
             font-weight: bold;
         }
         .bottom-section {
-            display: flex; 
-            justify-content: center; 
-            flex-wrap: wrap; 
+            display: flex;
+            justify-content: center;
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             margin: 20px;
@@ -53,30 +47,15 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
             text-align: center;
             position: relative;
-            height: auto; 
+            height: auto;
         }
-        .box {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            margin: 20px;
+        iframe.game-frame {
+            width: 100%;
+            max-width: 900px;
+            height: 700px;
+            border: none;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            text-align: center;
-            position: relative;
-            height: 300px;
-            width: 300px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .p1 {
-            color: white;
-            font-size: 30px;
-            margin: 15px 0 0 0;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
         }
         .back-button {
             display: inline-block;
@@ -93,109 +72,27 @@
             background: rgba(0, 0, 0, 0.7);
             transform: scale(1.05);
         }
-        .game-image {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-top: 20px;
-        }
-        .fa-solid {
-            font-size: 125px; 
-            color: white;
-            margin-top: 75px; 
-        }
-        
-        .go-button {
-    display: inline-block;
-    background: linear-gradient(to bottom, #333333, #333333);
-    color: white;
-    padding: 30px 80px;
-    margin: 40px auto;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 60px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    border: 5px solid #444;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.go-button:hover {
-    background: linear-gradient(to bottom, #444444, #111111);
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
-    border-color: #666;
-}
-
-.go-button:active {
-    transform: scale(0.98);
-}
     </style>
 </head>
 <body>
+
     <div class="banner">
         <div class="banner-content">Cantina della Pepper</div>
     </div>
+
     <h1>Giochi</h1>
-    <h2 style="color: white; text-align: center;">/ᐠ - ˕ -マ Ⳋ</h2>
+    <h2>/ᐠ - ˕ -マ Ⳋ</h2>
     <p style="color: white; text-align: center;">Giochi presi da gn-math... stra fighi rega!!</p>
 
     <div class="bottom-section">
-       <div class="go-button" id="goButton">
-    Giocha ora!
-</div>
+        <iframe class="game-frame" src="/page/internal/games.html"></iframe>
     </div>
+
     <div style="text-align: center;">
         <a href="index.html" class="back-button">
             <i class="fas fa-arrow-left"></i> Torna alla Home
         </a>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const goButton = document.getElementById('goButton');
-    
-    goButton.addEventListener('click', function() {
-        const url = 'https://gn-math.dev';
-        
-        const win = window.open('about:blank');
-        win.document.body.style.margin = '0';
-        win.document.body.style.height = '100vh';
-        win.document.body.style.backgroundColor = '#000';
-        
-        const iframe = win.document.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.margin = '0';
-        iframe.referrerpolicy = 'no-referrer';
-        iframe.allow = 'fullscreen';
-        iframe.src = url;
-        
-        win.document.body.appendChild(iframe);
-    });
-});
-    function openInBlank(url) {
-        const win = window.open('about:blank');
-        win.document.body.style.margin = '0';
-        win.document.body.style.height = '100vh';
-        
-        const iframe = win.document.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.margin = '0';
-        iframe.referrerpolicy = 'no-referrer';
-        iframe.allow = 'fullscreen';
-        iframe.src = url;
-        
-        win.document.body.appendChild(iframe);
-    }
-    </script>
 </body>
 </html>
-
-
