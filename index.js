@@ -17,7 +17,7 @@ console.log(chalk.yellow("Starting npm node.js server using file </index.js\>"))
 const __dirname = process.cwd();
 const server = http.createServer();
 const app = express();
-const bareServer = createBareServer("/fq/");
+const bareServer = createBareServer("/tungsahur/");
 const PORT = process.env.PORT || 6969;
 const cache = new Map();
 const CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // Cache for 30 Days
